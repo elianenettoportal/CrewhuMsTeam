@@ -1,0 +1,77 @@
+{
+    "$schema": "https://statics.teams.microsoft.com/sdk/v1.0/manifest/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.0",
+    "version": "1.0.0",
+    "id": "%MICROSOFT-APP-ID%",
+    "packageName": "com.crewhu.helloworld",
+    "developer": {
+        "name": "IcarusTech",
+        "websiteUrl": "http://icarustech.com.br/"
+    },
+    "name": {
+        "short": "Crewhu-APP",
+        "full": "Crewhu App for Microsoft Teams"
+    },
+    "description": {
+        "short": "Crewhu app connects your MSTeams with Crewhu application",
+        "full": "Crewhu app connects your MSTeams with Crewhu application. Using Crewhu APP you can have the functionalities as you have on the website "
+    },
+    "icons": {
+        "outline": "%FILENAME-20x20px%",
+        "color": "%FILENAME-96x96px"
+    },
+    "accentColor": "%HEX-COLOR%",
+    "staticTabs": [{
+        "entityId": "com.crewhu.helloworld.hellotab",
+        "name": "Hello Tab",
+        "contentUrl": "https://yourteamsapp.ngrok.io/hello",
+        "scopes": [
+            "personal"
+        ]
+    }],
+    "configurableTabs": [{
+        "configurationUrl": "https://yourteamsapp.ngrok.io/configure",
+        "canUpdateConfiguration": true,
+        "scopes": [
+            "team"
+        ]
+    }],
+    "bots": [{
+        "botId": "%MICROSOFT-APP-ID-REGISTERED-WITH-BOT-FRAMEWORK%",
+        "needsChannelSelector": false,
+        "isNotificationOnly": false,
+        "scopes": [
+            "team",
+            "personal"
+        ]
+    }],
+  "connectors": [
+    {
+      "connectorId": "GUID-FROM-CONNECTOR-DEV-PORTAL%",
+      "scopes": [ "team"]
+    }
+  ],
+    "composeExtensions": [{
+        "botId": "%MICROSOFT-APP-ID-REGISTERED-WITH-BOT-FRAMEWORK%",
+        "scopes": [
+            "personal",
+            "team"
+        ],
+        "commands": [{
+            "id": "getRandomText",
+            "description": "Gets some random text and images that you can insert in messages for fun.",
+            "title": "Get some random text for fun",
+            "initialRun": true,
+            "parameters": [{
+                "name": "cardTitle",
+                "description": "Card title to use",
+                "title": "Card title"
+            }]
+        }]
+    }],
+    "permissions": [
+      "identity",
+      "messageTeamMembers"
+    ],
+    "validDomains": []
+}

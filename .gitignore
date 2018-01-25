@@ -1,0 +1,4 @@
+# Paths
+node_modules/
+*.log
+log/*.log
